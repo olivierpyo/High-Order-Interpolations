@@ -131,15 +131,81 @@ Pas de screenshot.
 
 J'ai trouvé une interpolation, cependant je ne sais pas quel fichier aurait une telle cellule pour tester.
 
-Dans le code elle s'appelle `evaluateGmshHex343Field()` et avec ce commentaire :
+Dans le code elle s'appelle `evaluateGmshHex343Field()` , je la mets en entier :
+(Je ne sais pas quel type d'interpolation c'est, je vois trois `lagrangeBasis1D()` cependant)
 
-```c
+```cpp
 // ---------------------------------------------------------------------------
 // Complete Q6 scalar field in native Gmsh local-node ordering.
 //
 // coefficients[m] and HEX343_NODE_IJK[m] use the same Gmsh local DOF.
 // No CPU permutation is performed.
 // ---------------------------------------------------------------------------
+static __forceinline__ __device__
+float evaluateGmshHex343Field(
+	const float* coefficients,
+	const float3 ref)
+{
+	float basisG[7];
+	float basisH[7];
+	float basisR[7];
+
+	#pragma unroll
+	for(int index = 0;
+		index < 7;
+		++index)
+	{
+		basisG[index] =
+			lagrangeBasis1D(
+				ref.x,
+				index,
+				NODES_1D_ORDER6,
+				7);
+
+		basisH[index] =
+			lagrangeBasis1D(
+				ref.y,
+				index,
+				NODES_1D_ORDER6,
+				7);
+
+		basisR[index] =
+			lagrangeBasis1D(
+				ref.z,
+				index,
+				NODES_1D_ORDER6,
+				7);
+	}
+
+	float result = 0.f;
+
+	for(int localDof = 0;
+		localDof < 343;
+		++localDof)
+	{
+		// const int i =
+		//     HEX343_NODE_IJK[localDof][0];
+
+		// const int j =
+		//     HEX343_NODE_IJK[localDof][1];
+
+		// const int k =
+		//     HEX343_NODE_IJK[localDof][2];
+
+		const int i = HEX343_LIBMESH_NODE_IJK[localDof][0];
+		const int j = HEX343_LIBMESH_NODE_IJK[localDof][1];
+		const int k = HEX343_LIBMESH_NODE_IJK[localDof][2];
+
+		const float shapeValue =
+			basisG[i]
+		  * basisH[j]
+		  * basisR[k];
+
+		result += coefficients[localDof] * shapeValue;
+	}
+
+	return result;
+}
 ```
 
 et plus loin j'ai la fonction `evaluateHexahedralElementField()` qui contient un switch, et le hex 343 y est
@@ -155,7 +221,7 @@ case 6:
 	return evaluateGmshHex343Field(
 		coefficients,
 		ref);
-	}
+}
 ```
 
 Si j'ai bien compris il n'y a pas d'interpolation hex343 high order "classique", mais seulement "element field" :
