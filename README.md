@@ -57,9 +57,7 @@ PS : Vue par en dessous c'est bon, vu par au dessus il apparaît des faces inter
 
 # [pri06] Prism order 1
 
-> Prisme à base triangle.
-
-> Aussi appelé "Wedge".
+> Prisme à base triangle. Aussi appelé "Wedge".
 
 ## First order : Linear Interpolation
 
@@ -67,7 +65,7 @@ Pas de screenshot.
 
 
 
-# pyr05] Pyramid order 1
+# [pyr05] Pyramid order 1
 
 > Pyramide à base carrée.
 
@@ -123,14 +121,21 @@ Pas de screenshot.
 
 # Hex343 ?
 
-> J'ai trouvé une interpolation, cependant je ne sais pas quel fichier aurait une telle cellule pour tester.
+J'ai trouvé une interpolation, cependant je ne sais pas quel fichier aurait une telle cellule pour tester.
 
 # "Element"
 
-> J'ai inclus le code pour les cellules format "element", je n'ai pas encore réussi à tout faire fonctionner, je dois tester avec le `Data_from_vizir4/Main_data_with_order6/PML_hexa_element2727.msh` j'imagine. Il y a-t-il d'autres dossiers/fichiers à tester pour ce mode ?
+J'ai inclus le code pour les cellules format "element", je n'ai pas encore réussi à tout faire fonctionner, je dois tester avec le `Data_from_vizir4/Main_data_with_order6/PML_hexa_element2727.msh` j'imagine. Il y a-t-il d'autres dossiers/fichiers à tester pour ce mode ?
 
 
 # Question à propos de lagrange
 
-> J'ai trouvé des interpolation qui retournent une valeur avec une interpolation de lagrange, donc je les considère "High order, lagrange interpolation". Mais, j'ai aussi trouvé des interpolations qui sont plus courtes et qui était nommées full tensorial, je les considère "High order, lagrange full-tensorial interpolation". Mais quelle est la différence entre les deux ? 
+J'ai trouvé des interpolation qui retournent une valeur avec une interpolation de lagrange, donc je les considère "High order, lagrange interpolation". Mais, j'ai aussi trouvé des interpolations qui sont plus courtes et qui était nommées full tensorial, je les considère "High order, lagrange full-tensorial interpolation". Mais quelle est la différence entre les deux ? 
+
+# Pyramide et Prisme
+
+Je n'ai a priori pas de fichier possédant ces cellules. Serait-il possible de tester ces deux formats de cellules ?
+
+Aussi, j'ai vu dans le code des `#define` pour pyramide ordre 2 et prisme ordre 2, mais pas d'interpolation existante. 
+
 
