@@ -1,4 +1,6 @@
 
+Voici toutes les interpolation présentes dans le logiciel, triées par type de cellule. Avec un petit screenshot des 'bent block', avec le 'sample period' du renderer élevé.
+
 # [hex08] Hexahedron order 1
 
 ## Linear Interpolation
