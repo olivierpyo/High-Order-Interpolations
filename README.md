@@ -96,15 +96,17 @@ Pas de screenshot.
 
 ## High order : Lagrange Interpolation
 
-![tet10_b_HO_lagrange.png](./scr/tet10_b_HO_lagrange.png)
+> J'ajoute des screenshots à sample élevé, lagrange et serendipity ne donnent pas le résultat souhaité, mais a priori c'est normal et abandonné. Je les ai laissé simplement pour comparaison ou test.
+
+![tet10_b_HO_lagrange.png](./scr/tet10_b_HO_lagrange.png) ![tet10_b_HO_lagrange.png](./scr/tet10_b_HO_lagrange_HQ.png)
 
 ## High order : Serendipity Interpolation (C0-continuous across element boundaries)
 
-![tet10_c_HO_serendipity.png](./scr/tet10_c_HO_serendipity.png)
+![tet10_c_HO_serendipity.png](./scr/tet10_c_HO_serendipity.png) ![tet10_c_HO_serendipity.png](./scr/tet10_c_HO_serendipity_HQ.png)
 
 ## High order : Full-Tensorial Lagrange Interpolation
 
-![tet10_d_HO_lagrangefulltensorial.png](./scr/tet10_d_HO_lagrangefulltensorial.png)
+![tet10_d_HO_lagrangefulltensorial.png](./scr/tet10_d_HO_lagrangefulltensorial.png) ![tet10_d_HO_lagrangefulltensorial.png](./scr/tet10_d_HO_lagrangefulltensorial_HQ.png)
 
 
 
