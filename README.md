@@ -45,15 +45,15 @@ Voici toutes les interpolation présentes dans le logiciel, triées par type de 
 
 # [hex64] Hexahedron order 3
 
-PS : Vue par en dessous c'est bon, vu par au dessus il apparaît des faces internes sur le modèle, je ne comprends pas trop pouquoi.
+PS : Vue par en dessous c'est bon, vu par au dessus il apparaît des faces internes sur le modèle, je ne comprends pas trop pouquoi. J'ai ajouté un screenshot dans l'autre sens.
 
 ## First order : Linear Interpolation
 
-![hex64_a_FO_linear.png](./scr/hex64_a_FO_linear.png)
+![hex64_a_FO_linear.png](./scr/hex64_a_FO_linear.png) ![hex64_a_FO_linear.png](./scr/hex64_a_FO_linear_(back).png)
 
 ## High order : Full-Tensorial Lagrange Interpolation
 
-![hex64_b_HO_lagrangefulltensorial.png](./scr/hex64_b_HO_lagrangefulltensorial.png)
+![hex64_b_HO_lagrangefulltensorial.png](./scr/hex64_b_HO_lagrangefulltensorial.png) ![hex64_b_HO_lagrangefulltensorial.png](./scr/hex64_b_HO_lagrangefulltensorial_(back).png)
 
 
 
@@ -105,6 +105,8 @@ Pas de screenshot.
 ![tet10_c_HO_serendipity.png](./scr/tet10_c_HO_serendipity.png) ![tet10_c_HO_serendipity.png](./scr/tet10_c_HO_serendipity_HQ.png)
 
 ## High order : Full-Tensorial Lagrange Interpolation
+
+> Ici aucun souci
 
 ![tet10_d_HO_lagrangefulltensorial.png](./scr/tet10_d_HO_lagrangefulltensorial.png) ![tet10_d_HO_lagrangefulltensorial.png](./scr/tet10_d_HO_lagrangefulltensorial_HQ.png)
 
