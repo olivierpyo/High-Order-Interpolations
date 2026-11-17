@@ -1,6 +1,48 @@
 
 Voici toutes les interpolation présentes dans le logiciel, triées par type de cellule. Avec un petit screenshot des 'bent block', avec le 'sample period' du renderer élevé.
 
+Liste rapide : 
+
+```
+[hex08] Hexahedron order 1
+	First order : Linear Interpolation
+
+[hex20] Hexahedron order 2
+	First order : Linear Interpolation
+	High order : Lagrange Interpolation
+	High order : Serendipity Interpolation (C0-continuous across element boundaries)
+	High order : Least Squares Quadratic Interpolation
+
+[hex27] Hexahedron order 2 "full"
+	First order : Linear Interpolation
+	High order : Full-Tensorial Lagrange Interpolation
+
+[hex64] Hexahedron order 3
+	First order : Linear Interpolation
+	High order : Full-Tensorial Lagrange Interpolation
+
+[pri06] Prism order 1
+	First order : Linear Interpolation
+
+[pyr05] Pyramid order 1
+	First order : Linear Interpolation
+
+[tet04] Tetrahedron order 1
+	First order : Linear Interpolation
+
+[tet10] Tetrahedron order 2
+	First order : Linear Interpolation
+	High order : Lagrange Interpolation
+	High order : Serendipity Interpolation (C0-continuous across element boundaries)
+	High order : Full-Tensorial Lagrange Interpolation
+
+# [tet20] Tetrahedron order 3
+	First order : Linear Interpolation
+	High order : Full-Tensorial Lagrange Interpolation
+```
+
+Liste avec screenshots :
+
 # [hex08] Hexahedron order 1
 
 ## Linear Interpolation
