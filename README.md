@@ -131,6 +131,35 @@ Pas de screenshot.
 
 J'ai trouvé une interpolation, cependant je ne sais pas quel fichier aurait une telle cellule pour tester.
 
+Dans le code elle s'appelle `evaluateGmshHex343Field()` et avec ce commentaire :
+
+```c
+// ---------------------------------------------------------------------------
+// Complete Q6 scalar field in native Gmsh local-node ordering.
+//
+// coefficients[m] and HEX343_NODE_IJK[m] use the same Gmsh local DOF.
+// No CPU permutation is performed.
+// ---------------------------------------------------------------------------
+```
+
+et plus loin j'ai la fonction `evaluateHexahedralElementField()` qui contient un switch, et le hex 343 y est
+
+```c
+case 6:
+{
+	if(field.dofsPerCell != 343)
+	{
+		return 0.f;
+	}
+
+	return evaluateGmshHex343Field(
+		coefficients,
+		ref);
+	}
+```
+
+Si j'ai bien compris il n'y a pas d'interpolation hex343 high order "classique", mais seulement "element field" :
+
 # "Element"
 
 J'ai inclus le code pour les cellules format "element", je n'ai pas encore réussi à tout faire fonctionner, je dois tester avec le `Data_from_vizir4/Main_data_with_order6/PML_hexa_element2727.msh` j'imagine. Il y a-t-il d'autres dossiers/fichiers à tester pour ce mode ?
