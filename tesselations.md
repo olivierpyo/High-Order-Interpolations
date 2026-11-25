@@ -51,7 +51,9 @@
 - meshio conversion `.msh > .vtu`
 - paraview ouvre le `vtu` avec des cellules de type `QUADRATIC TETRAHEDRON`
 - paraview filtre "tesselation" :
-	- Subdivision 0, OK, maximum
+	- Slider à 0, c'est bon
+	- Slider à 1 et +, pas de changement c'est le même que slider à 0
+- fonctionne
 
 ### ✅ `low_bent_block_tet10_with_scalar.msh`
 
@@ -63,6 +65,7 @@
 	- Slider à 2, c'est bon
 	- Slider à 3, c'est bon
 	- Slider à 4 et +, pas de changement c'est le même que slider à 3
+- fonctionne
 
 ## Tet 20
 
@@ -81,6 +84,7 @@
 - paraview filtre "tesselation" :
 	- Slider à 0, c'est bon
 	- Slider à 1 et +, pas de changement c'est le même que slider à 0
+- fonctionne
 
 ## ✅ Chukrut `010_wrong_data1.msh`
 
@@ -89,6 +93,7 @@
 - paraview filtre "tesselation" :
 	- Slider à 0, c'est bon
 	- Slider à 1 et +, pas de changement c'est le même que slider à 0
+- fonctionne
 
 ## ✅ Kyoto `w0_ascii.msh`
 
@@ -97,4 +102,5 @@
 - paraview filtre "tesselation" :
 	- Slider à 0, c'est bon
 	- Slider à 1 et +, pas de changement c'est le même que slider à 0
+- fonctionne
 
