@@ -1,32 +1,91 @@
 
-# `high_bent_block_hex20_with_scalar.msh`
+# Test de tesselation
 
-✅ meshio conversion `.msh > .vtu`
-✅ paraview ouvre le `vtu` avec des cellules de type "tri-quadratic hexahedron"
-❌ paraview tesselation : `error CELL TYPE 29 not supported`
+## Hex 20
 
+### `high_bent_block_hex20_with_scalar.msh`
 
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `TRI-QUADRATIC HEXAHEDRON`
+- ❌ paraview tesselation : `error CELL TYPE 29 not supported`
 
-# `low_bent_block_hex20_with_scalar.msh`
-hex20 LOW , meshio OK, (quadratic hexahedron) tesselation OK avec "0-1-2"
+### `low_bent_block_hex20_with_scalar.msh`
 
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC HEXAHEDRON`
+- ✅ paraview tesselation :
+	- Subdivision 0, OK
+	- Subdivision 1, OK
+	- Subdivision 2, OK, maximum
 
-high_bent_block_hex27_with_scalar.msh
-hex27 HIGH, meshio OK, CELL TYPE 29 not supported (tri-quadratic hexahedron)
-low_bent_block_hex27_with_scalar.msh
-hex27 LOW , meshio OK, CELL TYPE 29 not supported (tri-quadratic hexahedron)
+## Hex 27
 
-hex64 HIGH, KeyError: 'hexahedron64'
-hex64 LOW , KeyError: 'hexahedron64'
+### `high_bent_block_hex27_with_scalar.msh`
 
-tet10 HIGH, meshio OK, (quadratic tetrahedron) paraview tesselation OK avec "0"
-tet10 LOW , meshio OK, (quadratic tetrahedron) paraview tesselation OK avec "0-1-2-3"
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `TRI-QUADRATIC HEXAHEDRON`
+- ❌ paraview tesselation : `error CELL TYPE 29 not supported`
 
-tet20 HIGH, KeyError: 'tetra20'
-tet20 LOW , KeyError: 'tetra20'
+### `low_bent_block_hex27_with_scalar.msh`
 
-PML OK mais inutile car ordre 1
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `TRI-QUADRATIC HEXAHEDRON`
+- ❌ paraview tesselation : `error CELL TYPE 29 not supported`
 
-chukrut OK (quadratic hexahedron) paraview tesselation OK avec "0"
+## Hex 64
 
-kyoto OK (quadratic hexahedron) paraview tesselation OK avec "0"
+### `high_bent_block_hex64_with_scalar.msh`
+
+- ❌ meshio conversion `.msh > .vtu` : `KeyError: 'hexahedron64'`
+
+### `low_bent_block_hex64_with_scalar.msh`
+
+- ❌ meshio conversion `.msh > .vtu` : `KeyError: 'hexahedron64'`
+
+## Tet 10
+
+### `high_bent_block_tet10_with_scalar.msh`
+
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC TETRAHEDRON`
+- ✅ paraview tesselation :
+	- Subdivision 0, OK, maximum
+
+### `low_bent_block_tet10_with_scalar.msh`
+
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC TETRAHEDRON`
+- ✅ paraview tesselation :
+	- Subdivision 0, OK
+	- Subdivision 1, OK
+	- Subdivision 2, OK
+	- Subdivision 3, OK, maximum
+
+## Tet 20
+
+### `high_bent_block_tet20_with_scalar.msh`
+
+- ❌ meshio conversion `.msh > .vtu` : `KeyError: 'tetra20'`
+
+### `low_bent_block_tet20_with_scalar.msh`
+
+- ❌ meshio conversion `.msh > .vtu` : `KeyError: 'tetra20'`
+
+## PML (Hex 343 element)
+
+- PML fonctionne car la géométrie est d'ordre 1, mais je ne suis pas sûr que cela soit utile.
+
+## Chukrut
+
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC HEXAHEDRON`
+- ✅ paraview tesselation :
+	- Subdivision 0, OK, maximum
+
+## Kyoto
+
+- ✅ meshio conversion `.msh > .vtu`
+- ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC HEXAHEDRON`
+- ✅ paraview tesselation :
+	- Subdivision 0, OK, maximum
+
