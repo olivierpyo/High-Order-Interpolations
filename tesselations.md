@@ -71,18 +71,18 @@
 
 - ❌ meshio conversion `.msh > .vtu` : `KeyError: 'tetra20'`
 
-## PML (Hex 343 element)
+## PML `PML_v41.msh`
 
 - PML fonctionne car la géométrie est d'ordre 1, mais je ne suis pas sûr que cela soit utile.
 
-## Chukrut
+## Chukrut `010_wrong_data1.msh`
 
 - ✅ meshio conversion `.msh > .vtu`
 - ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC HEXAHEDRON`
 - ✅ paraview tesselation :
 	- Subdivision 0, OK, maximum
 
-## Kyoto
+## Kyoto `w0_ascii.msh`
 
 - ✅ meshio conversion `.msh > .vtu`
 - ✅ paraview ouvre le `vtu` avec des cellules de type `QUADRATIC HEXAHEDRON`
