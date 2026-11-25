@@ -1,14 +1,13 @@
 
-`high_bent_block_hex20_with_scalar.msh`
-- meshio .msh > .vtu, fonctionne
-- paraview ouvre en tant que "tri-quadratic hexahedron"
-- ❌ paraview tesselation : error CELL TYPE 29 not supported 
+# `high_bent_block_hex20_with_scalar.msh`
 
-```
-- ❌ paraview tesselation : error CELL TYPE 29 not supported 
-```
+✅ meshio conversion `.msh > .vtu`
+✅ paraview ouvre le `vtu` avec des cellules de type "tri-quadratic hexahedron"
+❌ paraview tesselation : `error CELL TYPE 29 not supported`
 
-`low_bent_block_hex20_with_scalar.msh`
+
+
+# `low_bent_block_hex20_with_scalar.msh`
 hex20 LOW , meshio OK, (quadratic hexahedron) tesselation OK avec "0-1-2"
 
 
